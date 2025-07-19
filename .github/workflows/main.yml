@@ -36,5 +36,11 @@ jobs:
         run: echo "$RUNNER_VARS"
       - name:  Contexto VARS 2
         run: echo "${{ vars.VARS_CONTEXT }}"
+      - name: Contexto secret
+        env:
+          RUNNER_SECRET: ${{ toJson(secrets) }}
+        run: echo "$RUNNER_SECRET"
+      - name:  Contexto secret 2
+        run: echo "${{ secrets.SECRET_CONTEXT }}"
 
 
